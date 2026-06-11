@@ -33,3 +33,14 @@ jobs:
           ispwConfigPath: "GenApp_MainframeCore/ispwconfig.yml"
           assignmentPrefix: "GFLI"
           showEnv: true
+      - name: Generate
+        uses: bmc-compuware/ispw-generate@v1
+        id: generate
+        with:
+          ces_url: 'https://cwcc.bmc.com:2020/'
+          ces_token: ${{ secrets.CES_TOKEN }}
+          srid: 'CCGA'
+          runtime_configuration: 'ICCGA'
+          generate_automatically: ${{ steps.sync-local.outputs.automaticBuildJson }}
+      - name: Get the number of generate failures
+        run: echo "The number of generate failures is ${{ steps.generate.outputs.generate_failed_count }}"
