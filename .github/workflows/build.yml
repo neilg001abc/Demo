@@ -5,7 +5,7 @@ on:
 
 jobs:
   job_sync:
-    runs-on: [self-hosted, Windows]
+    runs-on: [self-hosted, Windows,AP-NGILFORD-W2-RETRY]
     env:
        Win_Topaz_Location: ${{ vars.TOPAZ_LOCATION }}
     name: Code Pipeline Sync on self-hosted runners
