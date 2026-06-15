@@ -7,7 +7,7 @@
 000700********************************************************
 000800* THIS PROGRAM IS A TRAINING PROGRAM
 000900*      WITH A LINK TO TSUBR01
-001000*  **  May 8th new new
+001000*  **  May 8th new new again
       * 8th May again and again
 001100*      AND COPYLIBS   TCPYA01   (HEADER)
 001200*                     TCPYB01   (LINK AREA)
