@@ -37,7 +37,7 @@ jobs:
         uses: bmc-compuware/ispw-generate@v1
         id: generate
         with:
-          ces_url: 'https://cwcc.bmc.com:2020/'
+          ces_url: 'http://cwcc.bmc.com:2020/'
           ces_token: ${{ secrets.CES_TOKEN }}
           srid: 'CCGA'
           runtime_configuration: 'ICCGA'
