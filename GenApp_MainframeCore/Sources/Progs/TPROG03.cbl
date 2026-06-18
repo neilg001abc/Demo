@@ -3,7 +3,7 @@
 000300 AUTHOR.        BENCHMARK ISPW TRAINING.
 000400 DATE-WRITTEN.  JANUARY 24TH, 1996.
 000500 DATE-COMPILED.
-000600** new line again
+000600** new line again again
 000700********************************************************
 000800* THIS PROGRAM IS A TRAINING PROGRAM
 000900*      WITH A LINK TO TSUBR03
