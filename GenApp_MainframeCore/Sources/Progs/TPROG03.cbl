@@ -7,7 +7,7 @@
 000700********************************************************
 000800* THIS PROGRAM IS A TRAINING PROGRAM
 000900*      WITH A LINK TO TSUBR03
-001000* again and a
+001000* again and agsin
 001100*      AND COPYLIBS   TCPYA03   (HEADER)
 001200*                     TCPYB03   (LINK AREA)
 001300* ======================================================
