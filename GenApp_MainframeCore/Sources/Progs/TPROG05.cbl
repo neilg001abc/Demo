@@ -8,6 +8,7 @@
 000800* THIS PROGRAM IS A TRAINING PROGRAM
 000900*      WITH A LINK TO TSUBR05
 001000*   demo 260622
+      * again
 001100*      AND COPYLIBS   TCPYA05   (HEADER)
 001200*                     TCPYB05   (LINK AREA)
 001300* ======================================================
