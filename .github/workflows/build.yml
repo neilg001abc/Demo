@@ -1,16 +1,20 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - feature/demo_feature
 
 jobs:
   job_sync:
-    runs-on: [self-hosted, Windows]
+    runs-on: [self-hosted, Windows,AP-NGILFORD-W2-RETRY]
     env:
        Win_Topaz_Location: ${{ vars.TOPAZ_LOCATION }}
     name: Code Pipeline Sync on self-hosted runners
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          clean: true
       - name: Synchronize
         uses: bmc-compuware/ispw-sync-local@v2.0
         id: sync-local
@@ -23,12 +27,21 @@ jobs:
           stream: 'GITFLOW'
           application: 'GITFLOWI'
           subAppl: 'GITFLOWI'
-          checkoutLevel: 'FEAT'
+          checkoutLevel: 'UNIT'
           gitUid: '@neilg001abc'
           gitToken: ${{ secrets.NEILG001ABC_GITHUB_TOKEN }}
-          gitBranch: "develop"
-          gitRepoUrl: "https://github.com/neilg001abc/Demo.git"
           winTopazPath: ${{ vars.TOPAZ_LOCATION }}
-          ispwConfigPath: "Demo/GenApp_MainframeCore/ispwconfig.yml"
+          ispwConfigPath: "GenApp_MainframeCore/ispwconfig.yml"
           assignmentPrefix: "GFLI"
           showEnv: true
+      - name: Generate
+        uses: bmc-compuware/ispw-generate@v1
+        id: generate
+        with:
+          ces_url: 'http://cwcc.bmc.com:2020/'
+          ces_token: ${{ secrets.CES_TOKEN }}
+          srid: 'CCGA'
+          runtime_configuration: 'ICCGA'
+          generate_automatically: ${{ steps.sync-local.outputs.automaticBuildJson }}
+      - name: Get the number of generate failures
+        run: echo "The number of generate failures is ${{ steps.generate.outputs.generate_failed_count }}"

@@ -1,4 +1,7 @@
-  clplm04: proc options(main);
+/**
+**Comment on 28-05-2026 13:39
+**/
+clplm04: proc options(main);
     dcl clpls04 entry;
     put skip list(' CLPLM04 Starting');
     %include clinc04;

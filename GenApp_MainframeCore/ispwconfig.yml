@@ -5,6 +5,8 @@ ispwApplication:
   runtimeConfig: iccga
   stream: GITFLOW
   application: GITFLOWI
+  subAppl: GITFLOWI
+  assignmentPrefix: GFLI
   sandbox: Y
   pathMappings:
   - path: "**/Sources/Progs"
@@ -17,10 +19,8 @@ ispwApplication:
     types:
     - fileExtension: cbl
       ispwType: COB
-      progType: 'No'
     - fileExtension: pli
       ispwType: PLI
-      progType: 'No'
   - path: "**/Sources/Jobs"
     types:
     - fileExtension: jcl

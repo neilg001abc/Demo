@@ -14,7 +14,7 @@
       *                                                                *
       *  RUN JCL     - STORED IN THE ECC SLCXCNTL FILE - LAUNCHDB      *
       *                                                                *
-      * 16:46                                                          *
+      * 26-05-2026 17:04                                                          *
       ******************************************************************
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
